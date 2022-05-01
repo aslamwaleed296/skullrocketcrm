@@ -1,0 +1,146 @@
+.call-label {
+  text-align: left;
+  font-size: 1.25em;
+  color: #777776;
+  display: block;
+}
+
+.call-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left-column,
+.center-column {
+  width: 50%;
+  min-width: 16em;
+  margin: 0 1.5em;
+  text-align: center;
+}
+
+.sound-devices {
+  width: 300px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+/* Center Column */
+.phone-number {
+  font-size: 1em;
+  width: 100%;
+  height: 2.5em;
+  padding: 0;
+  display: block;
+  margin: 10px 0;
+}
+
+div#volume-indicators {
+  padding: 10px;
+  margin-top: 20px;
+  width: 500px;
+  text-align: left;
+}
+
+div#volume-indicators > div {
+  display: block;
+  height: 20px;
+  width: 0;
+}
+
+/* Other Styles */
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.call-button:disabled {
+  cursor: not-allowed;
+}
+
+#ajaxloading_c {
+    z-index: 99999 !important;
+}
+
+.record-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-controls {
+  padding: 0.5rem 0;
+  display: block;
+}
+
+canvas {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#buttons {
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sound-clips {
+  flex: 1;
+  overflow: auto;
+  display: block;
+}
+
+article {
+  display: block;
+}
+
+.clip {
+  padding-bottom: 1rem;
+}
+
+audio {
+  width: 100%;
+  display: block;
+  margin: 1rem auto 0.5rem;
+}
+
+.clip p {
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.clip button {
+  font-size: 1rem;
+  float: right;
+}
+
+button.delete {
+  background: #f00;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.call-header {
+  padding: 12px !important;
+}
+
+.call-modal-title {
+  font-weight: 600 !important;
+}
+
+.cross-icon {
+  font-size: 25px !important;
+}
+
+/* Adjustments for wider screens */
+@media all and (min-width: 800px) {
+  .record-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
