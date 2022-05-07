@@ -190,6 +190,7 @@ async function makeOutgoingCall() {
     var params = {
       // get the phone number to call from the DOM
       To: phoneNumberInput.value,
+      lead_id: $('input[name=record]').val()
     };
 
     if (device) {
