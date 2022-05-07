@@ -18,7 +18,9 @@ function get_voice_response($phone) {
     } else if (!empty($phone) && strlen($phone) > 0) {
         $GLOBALS['log']->fatal("OUTGOING...");
         $number = htmlspecialchars($phone);
-        $dial = $response->dial('', ['callerId' => $sugar_config['TWILIO_CALLER_ID']]);
+        $leadId = $_REQUEST['lead_id'];
+        $callbackUrl = $sugar_config['site_url'] . 'index.php?entryPoint=saveRecording&leadId=' . $leadId;
+        $dial = $response->dial('', ['callerId' => $sugar_config['TWILIO_CALLER_ID'], 'record' => 'record-from-ringing-dual', 'recordingStatusCallback' => $callbackUrl, 'recordingStatusCallbackEvent' => 'in-progress completed absent']);
         
         // wrap the phone number or client name in the appropriate TwiML verb
         // by checking if the number given has only digits and format symbols
