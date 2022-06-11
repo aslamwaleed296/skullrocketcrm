@@ -14,7 +14,11 @@ if (isset($status) && $status == 'completed') {
     if ($leadId) {
         $callId = $helper->saveCall($leadId, $dateStart, $callSid);
         if ($callId) {
-            $helper->saveRecording($callId, $recordingId);
+            $save = $helper->saveRecording($callId, $recordingId);
+            if ($save) {
+                $GLOBALS['log']->fatal("REMOVE CALL RECORDING FROM TWILIO");
+                $helper->removeCallRecordingFromTwilio($recordingId);
+            }
         }
     }
 }

@@ -148,8 +148,21 @@ class CallsHelper {
         $GLOBALS['log']->fatal("PATH", $path);
 
         $recording_file = $this->getRecording($recordingId, $this->file_type);
-        sugar_file_put_contents($path, $recording_file);
+        
+        if (sugar_file_put_contents($path, $recording_file)) {
+            return true;
+        }
 
+        return;
+    }
+
+    public function removeCallRecordingFromTwilio($recordingId) {
+        $GLOBALS['log']->fatal("removeCallRecordingFromTwilio", $recordingId);
+        $sid = $this->config['TWILIO_ACCOUNT_SID'];
+        $token = $this->config['TWILIO_AUTH_TOKEN'];
+        $twilio = new Client($sid, $token);
+        $delete = $twilio->recordings($recordingId)->delete();
+        $GLOBALS['log']->fatal("delete", $delete);
         return true;
     }
 }
