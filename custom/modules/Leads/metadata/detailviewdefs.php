@@ -57,7 +57,11 @@ array(
           'CALL' =>
           array(
             'customCode' => '<input type="button" class="button" onClick="setupClient();" value="{$APP.LBL_CALL_CUSTOMER}">',
-          )
+          ),
+          'CALL' =>
+          array(
+            'customCode' => '<input type="button" class="button" onClick="sendMessage();" value="{$APP.LBL_SEND_SMS}">',
+          ),
         ),
         'headerTpl' => 'modules/Leads/tpls/DetailViewHeader.tpl',
       ),
@@ -88,6 +92,10 @@ array(
         2 =>
         array(
           'file' => 'custom/include/twilio/js/calls.js',
+        ),
+        3 =>
+        array(
+          'file' => 'custom/include/twilio/js/sms.js',
         ),
       ),
       'useTabs' => true,

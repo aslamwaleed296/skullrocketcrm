@@ -132,6 +132,14 @@ button.delete {
   font-weight: 600 !important;
 }
 
+.sms-header {
+  padding: 12px !important;
+}
+
+.sms-modal-title {
+  font-weight: 600 !important;
+}
+
 .cross-icon {
   font-size: 25px !important;
 }
